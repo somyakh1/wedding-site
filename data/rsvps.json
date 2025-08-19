@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Test User",
+    "email": "test@example.com",
+    "guests": 2,
+    "attending": "Yes",
+    "createdAt": "2025-08-15T16:28:07.965Z"
+  }
+]

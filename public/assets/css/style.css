@@ -1,0 +1,481 @@
+/*
+ * Global styles for the wedding website.
+ *
+ * The design uses a natural palette inspired by the new hero photo,
+ * with earthy greens and warm neutrals that complement the park scene.
+ * Traditional serif fonts for headings add elegance while sans‑serif
+ * fonts ensure readability for body text.  A simple navigation bar
+ * provides links between the home and RSVP pages.  Buttons and forms
+ * share a cohesive colour scheme.
+ */
+
+/* Reset some defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Use Garamond throughout the site for a cohesive typographic style. */
+  font-family: 'EB Garamond', Garamond, serif;
+  line-height: 1.6;
+  color: #333;
+  /* Apply a soft patterned background across the site.  Adjust the base
+   * colour and scale of the pattern to ensure pages don’t feel empty or
+   * overly white, while still keeping the design subtle and airy.
+   */
+  background-color: #f5f3ec;
+  /* The global body background is neutral; patterns are applied selectively on individual pages */
+  background-image: none;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Names bar at the top showing the couple's names */
+/* Hide the old names bar entirely since names now appear on the hero image */
+.names-bar {
+  display: none;
+}
+
+
+/* Hero heading overlay text */
+.hero-heading {
+  /* Use Garamond for the hero heading to match the rest of the site */
+  font-family: 'EB Garamond', Garamond, serif;
+  font-size: 3rem;
+  font-weight: normal;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Introductory section below the hero */
+.intro {
+  text-align: center;
+  padding: 2rem 1rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro h2 {
+  /* Use Garamond for section headings */
+  font-family: 'EB Garamond', Garamond, serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #587d3a;
+}
+
+.intro .date-location {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #4e7341;
+  font-weight: bold;
+}
+
+.intro .tagline {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #4e7341;
+  margin-bottom: 1rem;
+}
+
+/* Countdown boxes */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.countdown-item {
+  background-color: #e9e5d5;
+  border: 2px solid #587d3a;
+  border-radius: 8px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-item span {
+  font-size: 2.5rem;
+  color: #587d3a;
+  margin-bottom: 0.2rem;
+  /* Use Garamond for numeric display */
+  font-family: 'EB Garamond', Garamond, serif;
+}
+
+.countdown-item small {
+  font-size: 0.8rem;
+  color: #4e7341;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  /* Use Garamond for the labels */
+  font-family: 'EB Garamond', Garamond, serif;
+}
+
+.until-text {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #4e7341;
+}
+
+/*
+ * Content panels: used on pages with busy floral backgrounds to ensure
+ * readability.  Apply this class to sections on the home and wedding
+ * details pages so that text sits on a semi‑transparent white box.
+ */
+.content-panel {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 900px;
+}
+
+/*
+ * Couple section: reserved space for individual photos below the countdown.
+ * Inspired by the template, these circular placeholders can later be
+ * replaced with actual photos. We intentionally omit names here as
+ * requested, allowing the names bar above to handle identification.
+ */
+.couple-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  margin: 2rem auto;
+}
+
+.couple-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #e9e5d5;
+  border: 3px solid #587d3a;
+}
+
+/*
+ * Patterned background wrapper used on the home page.  It applies the floral
+ * watermark only to the content area below the hero image.  Sections inside
+ * this container no longer use separate boxes so text is written directly
+ * over the pattern.
+ */
+.pattern-bg {
+  /* Apply the user‑provided floral illustration as the watermark behind
+     the main content.  The pattern is repeated to cover wide screens
+     and scaled down slightly for a refined, vintage feel. */
+  background-image: url('../images/user-floral-bg.png');
+  background-repeat: repeat;
+  background-size: 600px;
+  /* Provide some padding around the content so text doesn’t touch edges */
+  padding: 2rem 0;
+  position: relative;
+}
+
+/* Light overlay to improve legibility of text on the patterned background.
+   This does not create discrete boxes; instead it subtly fades the pattern
+   behind all content inside .pattern-bg. */
+.pattern-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Soften the pattern with a semi‑transparent white overlay.  This
+     ensures text remains legible without requiring separate panels. */
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 0;
+}
+
+.pattern-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Page header for subpages */
+.page-header {
+  background-color: #e9e5d5;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.page-header h1 {
+  color: #587d3a;
+  /* Use Garamond for page headers */
+  font-family: 'EB Garamond', Garamond, serif;
+  font-size: 2rem;
+}
+
+/* Navigation */
+nav {
+  background-color: rgba(255, 255, 255, 0.85);
+  /* Add horizontal padding so links have breathing room when right‑aligned */
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  /* Align navigation links to the right side of the bar */
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+nav a {
+  /* Dark green for navigation links to reflect park tones */
+  color: #4e7341;
+  text-decoration: none;
+  font-weight: bold;
+  /* Use Garamond for navigation labels */
+  font-family: 'EB Garamond', Garamond, serif;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  /* Accent colour on hover */
+  color: #587d3a;
+}
+
+/* Header / Hero section */
+header {
+  /* Use the uploaded engagement photo as the hero background */
+  background-image: url('../images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Darken overlay to improve legibility over the photograph */
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+header .content {
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Slider navigation buttons in the hero */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+.slider-btn.left {
+  left: 1rem;
+}
+.slider-btn.right {
+  right: 1rem;
+}
+.slider-btn:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+h1, h2, h3, h4 {
+  /* Use Garamond for headings and section titles */
+  font-family: 'EB Garamond', Garamond, serif;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+.tagline {
+  font-style: italic;
+  font-size: 1.25rem;
+}
+
+/* Main content sections */
+section {
+  padding: 2rem 1rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+section ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  /* Primary accent colour for buttons */
+  background-color: #587d3a;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  /* Use Garamond for call‑to‑action text */
+  font-family: 'EB Garamond', Garamond, serif;
+}
+
+.button:hover {
+  /* Darker shade on hover */
+  background-color: #46612a;
+}
+
+/* Photo blog grid styles */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+/* Introduction box on the photo blog page */
+.photo-blog-page .intro-text {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+  /* Light neutral background for footer */
+  background-color: #e9e5d5;
+  padding: 1rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer a {
+  /* Links in the footer use the accent colour */
+  color: #587d3a;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* RSVP specific styles */
+.rsvp-page {
+  /* Use the subtle patterned background instead of the ornate border */
+  background-color: #f5f3ec;
+  /* Apply the user‑supplied floral watermark on RSVP and details pages */
+  background-image: url('../images/user-floral-bg.png');
+  background-repeat: repeat;
+  /* Scale down the floral print slightly for a refined look */
+  background-size: 600px;
+}
+
+.rsvp-page nav {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.rsvp-page section {
+  background-color: rgba(255, 255, 255, 0.92);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+  color: #555;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="number"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form input[type="submit"] {
+  background-color: #587d3a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #46612a;
+}
+
+#rsvpResponse {
+  font-weight: bold;
+}
+
+/*
+ * Photo blog page
+ * Uses the same floral background pattern as the rest of the site but
+ * avoids the semi‑transparent panels used on the RSVP page.  Apply
+ * this class to the body element of photo-blog.html.
+ */
+.photo-blog-page {
+  background-color: #f5f3ec;
+  background-image: url('../images/user-floral-bg.png');
+  background-repeat: repeat;
+  background-size: 600px;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Wedding</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Import Google Fonts: Garamond for headings and Great Vibes for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Import EB Garamond in multiple weights (400 regular, 600 semi‑bold, 700 bold) for headings and body text -->
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Primary navigation aligned to the top right -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="wedding-details.html">Wedding Details</a></li>
+        <li><a href="photo-blog.html">Photo Blog</a></li>
+        <li><a href="rsvp.html">RSVP</a></li>
+      </ul>
+    </nav>
+    <!-- Hero section with dynamic background slider and announcement -->
+    <header>
+      <div class="overlay"></div>
+      <div class="content">
+        <!-- Names and announcement combined into one sentence -->
+        <h1 class="hero-heading">Garvi &amp; Somya are getting married!</h1>
+      </div>
+      <!-- Slider controls -->
+      <button class="slider-btn left" aria-label="Previous photo">&#10094;</button>
+      <button class="slider-btn right" aria-label="Next photo">&#10095;</button>
+    </header>
+    <!-- Begin patterned background area -->
+    <div class="pattern-bg">
+    <!-- Introductory message with date, location, tagline and countdown -->
+    <section class="intro">
+      <h2>Hello!</h2>
+      <p class="date-location">22 &amp; 23 November&nbsp;2025, Udaipur, India</p>
+      <p class="tagline">Join us to celebrate our love</p>
+      <div class="countdown">
+        <div class="countdown-item">
+          <span id="days">0</span>
+          <small>Days</small>
+        </div>
+        <div class="countdown-item">
+          <span id="hours">0</span>
+          <small>Hours</small>
+        </div>
+      </div>
+      <p class="until-text">...until we get married!</p>
+    </section>
+    <!-- Welcome section -->
+    <section>
+      <h2>Welcome</h2>
+      <p>
+        We are so excited to celebrate our special day with you! Here you'll find
+        all the information you need about our wedding, including how to RSVP and what to
+        expect when you join us in beautiful Udaipur. We can't wait to
+        share this joyous occasion with our friends and family.
+      </p>
+    </section>
+    <!-- Call to action -->
+    <section style="text-align: center;">
+      <a href="rsvp.html" class="button">RSVP Now</a>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+      <p>
+        For any questions, please contact us at
+        <a href="mailto:wedding@example.com">wedding@example.com</a>
+      </p>
+    </footer>
+    </div> <!-- end pattern-bg -->
+    <script src="assets/js/countdown.js"></script>
+    <script src="assets/js/hero-slider.js"></script>
+  </body>
+</html>
