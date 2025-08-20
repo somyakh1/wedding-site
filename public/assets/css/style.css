@@ -1,3 +1,34 @@
+/* Responsive Google Sheets iframe for RSVP page */
+.responsive-iframe {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  /* Prevent overflow outside control panel */
+  overflow: hidden;
+}
+
+.responsive-iframe iframe {
+  width: 100%;
+  min-height: 600px;
+  height: 70vh;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .responsive-iframe {
+    max-width: 100%;
+    padding: 0;
+  }
+  .responsive-iframe iframe {
+    min-height: 500px;
+    height: 80vh;
+  }
+  .rsvp-page section {
+    padding: 1rem;
+  }
+}
 /*
  * Global styles for the wedding website.
  *
