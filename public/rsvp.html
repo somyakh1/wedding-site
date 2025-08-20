@@ -25,39 +25,7 @@
     <section>
       <h1>RSVP</h1>
       <p>Please let us know if you'll be able to join us.</p>
-      <form id="rsvpForm">
-        <label for="name">Full Name<span style="color: red;">*</span></label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email">Email Address<span style="color: red;">*</span></label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" />
-
-        <label for="guests">Number of Guests<span style="color: red;">*</span></label>
-        <input
-          type="number"
-          id="guests"
-          name="guests"
-          min="1"
-          max="10"
-          required
-        />
-
-        <label for="attending">Will you attend?<span style="color: red;">*</span></label>
-        <select id="attending" name="attending" required>
-          <option value="">-- Please choose --</option>
-          <option value="Yes">Yes, can't wait!</option>
-          <option value="No">Sorry, can't make it</option>
-          <option value="Maybe">Maybe</option>
-        </select>
-
-        <label for="message">Message / Dietary Requirements</label>
-        <textarea id="message" name="message" rows="4"></textarea>
-
-        <input type="submit" value="Submit RSVP" />
-      </form>
+     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScsz46uds18WqrxaB8SQ_w_vVkRONajHa_Q0gZbW30MZnZ3kQ/viewform?embedded=true" width="640" height="1407" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
       <div id="rsvpResponse" style="display: none; margin-top: 1rem;"></div>
     </section>
     <footer class="footer">
