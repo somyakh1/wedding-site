@@ -8,33 +8,21 @@
   .icon-event {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
-    margin-left: 0;
-    margin-right: 0;
-    gap: 0;
+    justify-content: center;
+    margin-left: 10vw;
   }
   .icon-event .event-icon {
     margin-left: 0 !important;
-    margin-right: 0 !important;
-    display: block;
-    flex: 0 0 auto;
-    align-self: flex-start;
-  }
-  .icon-event .event-details-text-mobile {
-    flex: 1 1 auto;
-    text-align: right !important;
-    margin-left: auto;
-    margin-right: 0;
-    width: 60%;
+    margin-right: auto !important;
     display: block;
   }
   .icon-event .event-time,
   .icon-event .event-name {
-    text-align: right !important;
     margin-left: auto !important;
-    margin-right: 0 !important;
+    margin-right: auto !important;
+    text-align: center !important;
     width: 100%;
     display: block;
   }
