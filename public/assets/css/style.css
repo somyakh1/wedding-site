@@ -705,7 +705,6 @@ form input[type="submit"]:hover {
   font-size: 1.15rem;
   line-height: 1.4;
   text-align: center;
-  margin-left: 30px;
 }
 
 /* Icon-based schedule layout for Day 2.  Use a similar flexible grid.
@@ -741,7 +740,20 @@ form input[type="submit"]:hover {
   font-size: 1.15rem;
   line-height: 1.4;
   text-align: center;
-  margin-left: 30px;
+@media (max-width: 700px) {
+  .icon-event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .icon-event .event-time,
+  .icon-event .event-name {
+    margin-left: 0 !important;
+    text-align: center !important;
+    width: 100%;
+  }
+}
 }
 
 #rsvpResponse {
