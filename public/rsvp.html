@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RSVP &ndash; Our Wedding</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RSVP &ndash; Our Wedding</title>
+  <!-- Open Graph Meta Tags for WhatsApp and social sharing -->
+  <meta property="og:title" content="Garvi & Somya's Wedding RSVP" />
+  <meta property="og:description" content="Let us know if you can join us for our wedding celebration in Udaipur, India! RSVP and event details here." />
+    <meta property="og:image" content="https://garvi-somya-wedding.netlify.app/assets/images/hero.jpg" />
+    <meta property="og:url" content="https://garvi-somya-wedding.netlify.app/rsvp.html" />
+    <meta property="og:type" content="website" />
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Garvi & Somya's Wedding RSVP" />
+    <meta name="twitter:description" content="Let us know if you can join us for our wedding celebration in Udaipur, India! RSVP and event details here." />
+    <meta name="twitter:image" content="https://garvi-somya-wedding.netlify.app/assets/images/hero.jpg" />
+    <!-- Domain updated for live site -->
+  <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Import Google Fonts: Garamond for headings and Great Vibes for body text -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,20 +28,22 @@
     <!-- Navigation aligned to the right -->
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="wedding-details.html">Wedding Details</a></li>
-        <li><a href="photo-blog.html">Photo Blog</a></li>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="wedding-details.html">WEDDING DETAILS</a></li>
+        <li><a href="photo-blog.html">PHOTO BLOG</a></li>
         <li><a href="rsvp.html">RSVP</a></li>
       </ul>
     </nav>
     <section>
-     <div class="responsive-iframe">
-       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScsz46uds18WqrxaB8SQ_w_vVkRONajHa_Q0gZbW30MZnZ3kQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" allowfullscreen>Loading…</iframe>
-     </div>
+      <!-- Responsive Google Form embed for full scroll visibility -->
+      <div class="responsive-iframe">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScsz46uds18WqrxaB8SQ_w_vVkRONajHa_Q0gZbW30MZnZ3kQ/viewform?embedded=true"
+                frameborder="0" marginheight="0" marginwidth="0">
+          Loading…
+        </iframe>
+      </div>
       <div id="rsvpResponse" style="display: none; margin-top: 1rem;"></div>
     </section>
-    <footer class="footer">
-      <p>Thank you for taking the time to respond!</p>
-    </footer>
+    <!-- Footer removed for a seamless appearance -->
   </body>
 </html>

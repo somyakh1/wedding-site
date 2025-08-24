@@ -1,3 +1,98 @@
+/* Schedule section horizontal layout for wedding details page */
+.schedule-section {
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.schedule-day {
+  border-radius: 12px;
+  box-shadow: none;
+  padding: 1.5rem 0 1rem 0;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.schedule-day.day1 {
+  /* Remove background colour from Day 1 schedule; styling will be
+     controlled by the new day‑specific classes */
+  background: transparent;
+}
+.schedule-day.day2 {
+  /* Remove background colour and border from Day 2 schedule */
+  background: transparent;
+  border: none;
+}
+.schedule-day h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.schedule-day.day1 h3 {
+  /* Use inherited colours for headings; colours will be set in
+     day‑specific classes */
+  color: inherit;
+}
+.schedule-day.day2 h3 {
+  color: inherit;
+}
+.schedule-events {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.schedule-event {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+  max-width: 160px;
+  flex: 1 1 120px;
+}
+.schedule-text {
+  text-align: center;
+  font-size: 1rem;
+}
+.schedule-day.day1 .schedule-text {
+  color: inherit;
+}
+.schedule-day.day2 .schedule-text {
+  color: inherit;
+}
+/* --- End Wedding Details Schedule Custom Styles --- */
+
+/* --- Wedding Details Page Custom Styles --- */
+.wedding-details-page {
+  /* Use the neutral site background and green text on the wedding details page */
+  background-image: none !important;
+  background-color: #f5f3ec !important;
+  color: #587d3a !important;
+}
+/* --- End Wedding Details Page Custom Styles --- */
+
+/* Chilli pepper color for navigation tabs on all pages except index */
+/* Navigation link colours for subpages (wedding details, photo blog and RSVP).
+   Use the same earthy green as the Day 2 heading so navigation blends with the
+   rest of the design.  Only apply these styles on subpages; the home page
+   keeps its white navigation. */
+body.photo-blog-page nav a,
+body.rsvp-page nav a,
+body.wedding-details-page nav a {
+  color: #587d3a !important;
+}
+body.photo-blog-page nav a:hover,
+body.rsvp-page nav a:hover,
+body.wedding-details-page nav a:hover {
+  color: #46612a !important;
+}
 /* Responsive Google Sheets iframe for RSVP page */
 .responsive-iframe {
   position: relative;
@@ -75,8 +170,23 @@ body {
 .hero-heading {
   /* Use Garamond for the hero heading to match the rest of the site */
   font-family: 'EB Garamond', Garamond, serif;
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: normal;
+  line-height: 1.1;
+}
+
+.hero-heading .hero-names {
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  display: block;
+}
+
+.hero-heading .hero-sub {
+  font-size: 1.3rem;
+  font-weight: 400;
+  display: block;
+  margin-top: 0.3em;
   color: #fff;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
@@ -161,12 +271,17 @@ body {
  * readability.  Apply this class to sections on the home and wedding
  * details pages so that text sits on a semi‑transparent white box.
  */
+/*
+ * Content panels no longer use separate boxes.  Sections simply
+ * inherit the page background for a seamless flow.  Padding and
+ * margins are reduced to minimise visible breaks between sections.
+ */
 .content-panel {
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 2rem 1rem;
-  border-radius: 8px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
-  margin: 2rem auto;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0 auto;
   width: 100%;
   max-width: 900px;
 }
@@ -199,37 +314,25 @@ body {
  * this container no longer use separate boxes so text is written directly
  * over the pattern.
  */
+/*
+ * Remove the floral patterned background across all pages.
+ * The site now uses a single neutral backdrop so content flows
+ * seamlessly without discrete sections.  Pattern‑related classes
+ * are left empty for backward compatibility.
+ */
 .pattern-bg {
-  /* Apply the user‑provided floral illustration as the watermark behind
-     the main content.  The pattern is repeated to cover wide screens
-     and scaled down slightly for a refined, vintage feel. */
-  background-image: url('../images/user-floral-bg.png');
-  background-repeat: repeat;
-  background-size: 600px;
-  /* Provide some padding around the content so text doesn’t touch edges */
-  padding: 2rem 0;
-  position: relative;
+  background-image: none;
+  padding: 0;
+  position: static;
 }
 
-/* Light overlay to improve legibility of text on the patterned background.
-   This does not create discrete boxes; instead it subtly fades the pattern
-   behind all content inside .pattern-bg. */
 .pattern-bg::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* Soften the pattern with a semi‑transparent white overlay.  This
-     ensures text remains legible without requiring separate panels. */
-  background-color: rgba(255, 255, 255, 0.85);
-  z-index: 0;
+  content: none;
 }
 
 .pattern-bg > * {
-  position: relative;
-  z-index: 1;
+  position: static;
+  z-index: auto;
 }
 
 /* Page header for subpages */
@@ -237,6 +340,22 @@ body {
   background-color: #e9e5d5;
   padding: 2rem 0;
   text-align: center;
+}
+
+/* Wedding details specific typography */
+/* Use the earthy green for section headings on the details page */
+.wedding-details-page h2 {
+  color: #587d3a;
+}
+.wedding-details-page p {
+  /* Use a dark neutral for body text */
+  color: #333;
+}
+
+/* Increase spacing below the navigation bar on the wedding details page
+   so that the first section does not sit too close to the nav. */
+body.wedding-details-page section:first-of-type {
+  margin-top: 4rem;
 }
 
 .page-header h1 {
@@ -248,13 +367,14 @@ body {
 
 /* Navigation */
 nav {
-  background-color: rgba(255, 255, 255, 0.85);
-  /* Add horizontal padding so links have breathing room when right‑aligned */
+  background-color: transparent;
   padding: 1rem 2rem;
-  position: sticky;
+  position: absolute;
   top: 0;
-  z-index: 100;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  left: 0;
+  width: 100%;
+  z-index: 101;
+  box-shadow: none;
 }
 
 nav ul {
@@ -267,7 +387,7 @@ nav ul {
 
 nav a {
   /* Dark green for navigation links to reflect park tones */
-  color: #4e7341;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
   /* Use Garamond for navigation labels */
@@ -277,7 +397,7 @@ nav a {
 
 nav a:hover {
   /* Accent colour on hover */
-  color: #587d3a;
+  color: #e9e5d5;
 }
 
 /* Header / Hero section */
@@ -404,13 +524,15 @@ section ul {
 
 /* Introduction box on the photo blog page */
 .photo-blog-page .intro-text {
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 1.5rem;
-  border-radius: 8px;
+  /* Remove the semi‑transparent panel on the photo blog intro.  The
+     paragraph now flows directly on the neutral background. */
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
   width: 100%;
   max-width: 1000px;
   margin: 2rem auto;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
   line-height: 1.5;
 }
 
@@ -432,24 +554,27 @@ section ul {
 
 /* RSVP specific styles */
 .rsvp-page {
-  /* Use the subtle patterned background instead of the ornate border */
+  /* Use the neutral background throughout the RSVP page.  Remove the floral
+     watermark so the page flows seamlessly with the rest of the site. */
   background-color: #f5f3ec;
-  /* Apply the user‑supplied floral watermark on RSVP and details pages */
-  background-image: url('../images/user-floral-bg.png');
-  background-repeat: repeat;
-  /* Scale down the floral print slightly for a refined look */
-  background-size: 600px;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-size: auto;
 }
 
 .rsvp-page nav {
-  background-color: rgba(255, 255, 255, 0.9);
+  /* Remove navigation bar backdrop on RSVP page */
+  background-color: transparent;
 }
 
 .rsvp-page section {
-  background-color: rgba(255, 255, 255, 0.92);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* Remove the tinted panel on RSVP page.  The Google Form remains in
+     its iframe, and the surrounding section inherits the neutral
+     background. */
+  background-color: transparent;
+  padding: 2rem 1rem;
+  border-radius: 0;
+  box-shadow: none;
   margin-top: 2rem;
 }
 
@@ -494,6 +619,127 @@ form input[type="submit"]:hover {
   background-color: #46612a;
 }
 
+/* =============================================================
+ * Wedding Details: New Schedule Layout
+ *
+ * The updated wedding schedule no longer uses coloured boxes.  Instead,
+ * each day presents a decorative illustration with the events
+ * aligned beneath or over it.  Colours are defined on a per‑day
+ * basis to provide contrast between Day 1 and Day 2.
+ * ============================================================= */
+
+/* Wrapper for each day’s schedule */
+.day-section {
+  margin: 3rem auto;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Day headings */
+.day-section h3 {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+/* Colour for Day 1 heading: use dark neutral to contrast with icons */
+.day-section.day1 h3 {
+  color: #333;
+}
+
+/* Colour for Day 2 heading: use the same earthy green used in navigation */
+.day-section.day2 h3 {
+  color: #587d3a;
+}
+
+/* Container for schedule images */
+.day-section .schedule-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.day-section .schedule-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Remove positioning rules for the old overlay-based schedule layouts. */
+.day1-events,
+.day2-events {
+  display: none;
+}
+
+/* Icon-based schedule layout for Day 1.  Display events in a flexible
+   row that wraps on small screens. */
+.day1-icon-events {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.day1-icon-events .icon-event {
+  flex: 1 1 30%;
+  max-width: 30%;
+  min-width: 200px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.day1-icon-events .event-icon {
+  width: 250px;
+  height: 250px;
+  margin-bottom: 0.5rem;
+  /* Show Day 1 icons in full color and larger size */
+  filter: none;
+}
+
+.day1-icon-events .event-time,
+.day1-icon-events .event-name {
+  color: #333;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+/* Icon-based schedule layout for Day 2.  Use a similar flexible grid.
+   Each event occupies roughly half the available width on desktop and
+   stacks on smaller screens. */
+.day2-icon-events {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.day2-icon-events .icon-event {
+  flex: 1 1 45%;
+  max-width: 45%;
+  min-width: 200px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.day2-icon-events .event-icon {
+  width: 250px;
+  height: 250px;
+  margin-bottom: 0.5rem;
+  /* Show Day 2 icons in full color and larger size */
+  filter: none;
+}
+
+.day2-icon-events .event-time,
+.day2-icon-events .event-name {
+  color: #587d3a;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
 #rsvpResponse {
   font-weight: bold;
 }
@@ -504,9 +750,9 @@ form input[type="submit"]:hover {
  * avoids the semi‑transparent panels used on the RSVP page.  Apply
  * this class to the body element of photo-blog.html.
  */
+/* Photo blog page inherits the same neutral background as other pages.  Remove
+   the floral watermark so photos appear on a clean backdrop. */
 .photo-blog-page {
   background-color: #f5f3ec;
-  background-image: url('../images/user-floral-bg.png');
-  background-repeat: repeat;
-  background-size: 600px;
+  background-image: none;
 }

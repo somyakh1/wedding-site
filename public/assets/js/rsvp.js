@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     try {
-      const res = await fetch('https://wedding-site-nccr.onrender.com/rsvp', {
+      const res = await fetch('/rsvp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

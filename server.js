@@ -132,39 +132,6 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // Provide a simple API to retrieve all RSVP submissions.  This route
-  // returns the contents of the rsvps.json file as JSON.  CORS
-  // headers are set to allow access from any origin.  If the file
-  // doesn't exist yet an empty array is returned.  This makes it
-  // easy to inspect RSVPs without logging into the server.
-  if (req.method === 'GET' && pathname === '/rsvps') {
-    fs.readFile(RSVP_STORAGE, 'utf8', (err, fileData) => {
-      let responseJson;
-      if (err) {
-        // If file not found, return empty array instead of error.
-        if (err.code === 'ENOENT') {
-          responseJson = '[]';
-        } else {
-          console.error('Failed to read RSVP storage:', err);
-          res.writeHead(500, {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
-          });
-          res.end(JSON.stringify({ error: 'Unable to read RSVPs' }));
-          return;
-        }
-      } else {
-        responseJson = fileData || '[]';
-      }
-      res.writeHead(200, {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      });
-      res.end(responseJson);
-    });
-    return;
-  }
-
   // Handle CORS preflight for the RSVP endpoint.  Browsers send an
   // OPTIONS request before certain POSTs when cross‑origin.  Without
   // responding to OPTIONS the browser would block the request.  Here

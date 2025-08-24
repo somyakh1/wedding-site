@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wedding Details &ndash; Garvi &amp; Somya</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Details &ndash; Garvi &amp; Somya</title>
+  <!-- Open Graph Meta Tags for WhatsApp and social sharing -->
+  <meta property="og:title" content="Garvi & Somya's Wedding in Udaipur" />
+  <meta property="og:description" content="Join us for our wedding celebration in Udaipur, India! Find all event details, schedule, and RSVP here." />
+  <meta property="og:image" content="https://yourdomain.com/assets/images/hero.jpg" />
+  <meta property="og:url" content="https://yourdomain.com/wedding-details.html" />
+  <meta property="og:type" content="website" />
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Garvi & Somya's Wedding in Udaipur" />
+  <meta name="twitter:description" content="Join us for our wedding celebration in Udaipur, India! Find all event details, schedule, and RSVP here." />
+  <meta name="twitter:image" content="https://yourdomain.com/assets/images/hero.jpg" />
+  <!-- Replace 'yourdomain.com' with your actual domain name when live -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .wedding-details-page, .wedding-details-page * {
+      color: #587d3a !important;
+    }
+  </style>
     <style>
       .event-details-flex {
         display: flex;
@@ -66,23 +83,18 @@
     <!-- Import EB Garamond weights for consistent typography across headings and body -->
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body class="wedding-details-page">
     <!-- Navigation aligned to the right -->
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="wedding-details.html">Wedding Details</a></li>
-        <li><a href="photo-blog.html">Photo Blog</a></li>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="wedding-details.html">WEDDING DETAILS</a></li>
+        <li><a href="photo-blog.html">PHOTO BLOG</a></li>
         <li><a href="rsvp.html">RSVP</a></li>
       </ul>
     </nav>
-    <!-- Page header for this page -->
-    <div class="page-header">
-      <h1>Wedding Details</h1>
-    </div>
-    <!-- Begin patterned background area -->
-    <div class="pattern-bg">
-    <section class="content-panel">
+    <!-- Page content -->
+  <section>
       <div class="event-details-flex">
         <div class="event-details-text">
           <h2>Event Details</h2>
@@ -101,34 +113,51 @@
         </div>
       </div>
     </section>
-    <section class="content-panel">
+
+    <section class="schedule-section">
       <h2>Schedule</h2>
-      <h3>Day&nbsp;0 &ndash; 21&nbsp;November&nbsp;2025</h3>
-      <ul>
-        <li>12:00&nbsp;PM &ndash; Mehendi</li>
-        <li>5:00&nbsp;PM&nbsp;&ndash;&nbsp;8:00&nbsp;PM &ndash; Ganesh Pujan, Shubhmuhurat</li>
-      </ul>
-      <hr style="margin: 2em 0;" />
-      <h3>Day&nbsp;1 &ndash; 22&nbsp;November&nbsp;2025</h3>
-      <ul>
-        <li>8:30&nbsp;AM&nbsp;&ndash;&nbsp;11:30&nbsp;PM &ndash; Mandapa Ropan, Griha Shanti Puja</li>
-        <li>1:30&nbsp;PM &ndash; Haldi</li>
-        <li>6:30&nbsp;PM &ndash; Sangeet & Garba</li>
-      </ul>
-      <hr style="margin: 2em 0;" />
-      <h3>Day&nbsp;2 &ndash; 23&nbsp;November&nbsp;2025</h3>
-      <ul>
-        <li>09:00&nbsp;AM &ndash; Baarat & Photoshoot</li>
-        <li>11:00&nbsp;AM &ndash; Varmala </li>
-        <li>11:30&nbsp;AM &ndash; Phere and Vivah vidhis</li>
-        <li>7:30&nbsp;PM &ndash; Reception</li>
-      </ul>
+      <!-- New schedule design -->
+      <!-- Day 1 schedule using individual icons instead of the full illustration.  Each
+           event is represented by its own icon cropped from the original image. -->
+      <div class="day-section day1">
+  <h3>Day 1<br><span style="font-weight:inherit; font-size:inherit;">22 November 2025</span></h3>
+        <div class="day1-icon-events">
+          <div class="icon-event">
+            <img src="assets/images/1.png" alt="Mandapa icon" class="event-icon" />
+            <p class="event-time">8:30 AM</p>
+            <p class="event-name">Griha Shanti Puja</p>
+          </div>
+          <div class="icon-event">
+            <img src="assets/images/2.png" alt="Haldi icon" class="event-icon" />
+            <p class="event-time">1:30 PM</p>
+            <p class="event-name">Haldi</p>
+          </div>
+          <div class="icon-event">
+            <img src="assets/images/3.png" alt="Sangeet icon" class="event-icon" />
+            <p class="event-time">6:30 PM</p>
+            <p class="event-name">Sangeet &amp; Garba</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 2 schedule using a single decorative icon repeated for each event.  The
+           illustration has been cropped from the provided image and placed above
+           each event. -->
+      <div class="day-section day2">
+  <h3>Day 2<br><span style="font-weight:inherit; font-size:inherit;">23 November 2025</span></h3>
+        <div class="day2-icon-events">
+          <div class="icon-event">
+            <img src="assets/images/s1.png" alt="Day 2 icon" class="event-icon" />
+            <p class="event-time" style="margin-bottom:0.2em;"></p>
+            <p class="event-name">9:00 AM Baarat Welcome<br>10:30 AM Varmala<br>11:30 AM Phere &amp; Vivah Vidhis</p>
+          </div>
+          <div class="icon-event">
+            <img src="assets/images/s3.png" alt="Day 2 icon" class="event-icon" />
+            <p class="event-time">7:30 PM</p>
+            <p class="event-name">Reception</p>
+          </div>
+        </div>
+      </div>
     </section>
-    <footer class="footer">
-      <p>
-        For any questions, please contact us at
-        <a href="tel:+12019368247">+1-201-936-8247</a>
-      </p>
-    </footer>
   </body>
 </html>
