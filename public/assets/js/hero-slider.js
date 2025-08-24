@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // List of hero images.  Update this list when adding or replacing
   // photos in the assets/images folder.
   const images = [
-    'assets/images/hero.jpg',
-    'assets/images/gsengagement-9.jpg',
-    'assets/images/gengagement-222.jpg'
+  'assets/images/hero.jpg',
+  'assets/images/image1.jpg',
+  'assets/images/image4.jpg'
   ];
 
   let currentIndex = 0;
