@@ -1,3 +1,54 @@
+/* Grid for the list of events */
+.events-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+/* Center icon and text within each event */
+.event {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  padding: 0.75rem 0.5rem;
+}
+
+/* Icon sizing: consistent, no overflow */
+.event-icon {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  aspect-ratio: 1 / 1;
+}
+
+/* Tidy text spacing */
+.event-title { margin: 0.5rem 0 0.25rem; font-weight: 600; }
+.event-time, .event-place { margin: 0; }
+
+/* Undo any legacy left/right drift from older styles */
+.event, .event-content, .events-grid,
+.event * {
+  float: none !important;
+  text-align: inherit;
+}
+
+/* Remove stray margins that push content */
+.event-content { margin: 0; }
+
+@media (min-width: 640px) {
+  .events-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .events-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  /* Optional: left-align text on large screens only */
+  /* .event { justify-items: start; text-align: left; } */
+}
 @media (max-width: 700px) {
   .day1-icon-events,
   .day2-icon-events {
