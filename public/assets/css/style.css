@@ -1,3 +1,22 @@
+footer {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+footer img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+body {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
 /* Schedule section horizontal layout for wedding details page */
 .schedule-section {
   margin: 2rem auto;
