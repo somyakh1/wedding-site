@@ -692,8 +692,8 @@ form input[type="submit"]:hover {
 }
 
 .day1-icon-events .event-icon {
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   margin-bottom: 0.5rem;
   /* Show Day 1 icons in full color and larger size */
   filter: none;
@@ -702,8 +702,10 @@ form input[type="submit"]:hover {
 .day1-icon-events .event-time,
 .day1-icon-events .event-name {
   color: #333;
-  font-size: 0.9rem;
-  line-height: 1.3;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  text-align: center;
+  margin-left: 30px;
 }
 
 /* Icon-based schedule layout for Day 2.  Use a similar flexible grid.
@@ -726,8 +728,8 @@ form input[type="submit"]:hover {
 }
 
 .day2-icon-events .event-icon {
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   margin-bottom: 0.5rem;
   /* Show Day 2 icons in full color and larger size */
   filter: none;
@@ -736,8 +738,10 @@ form input[type="submit"]:hover {
 .day2-icon-events .event-time,
 .day2-icon-events .event-name {
   color: #587d3a;
-  font-size: 0.9rem;
-  line-height: 1.3;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  text-align: center;
+  margin-left: 30px;
 }
 
 #rsvpResponse {
